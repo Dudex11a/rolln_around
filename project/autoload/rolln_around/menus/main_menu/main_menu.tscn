@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://bp777ygb0kifp"]
+
+[ext_resource type="Script" uid="uid://cqu06kpswyw81" path="res://autoload/rolln_around/menus/main_menu/main_menu.gd" id="1_4ubm5"]
+[ext_resource type="Texture2D" uid="uid://dfwf57fsjko2a" path="res://res/icons/play-fill.svg" id="2_8nhlc"]
+[ext_resource type="PackedScene" uid="uid://65kga7r7l3mc" path="res://autoload/rolln_around/menus/main_menu/main_menu_button/main_menu_button.tscn" id="2_wvvp1"]
+[ext_resource type="Texture2D" uid="uid://dw1km5pgyobkf" path="res://res/icons/restart-line.svg" id="3_yx8xr"]
+[ext_resource type="Texture2D" uid="uid://bafglke2mwfam" path="res://res/icons/function-fill.svg" id="4_3k06j"]
+[ext_resource type="Texture2D" uid="uid://cgy03xepqu1yq" path="res://res/icons/user-fill.svg" id="5_gs1wd"]
+[ext_resource type="Texture2D" uid="uid://bxy4ufvubdegu" path="res://res/icons/settings-4-fill.svg" id="6_5e4cc"]
+[ext_resource type="Texture2D" uid="uid://c5i1neb8w87h6" path="res://res/icons/file-list-fill.svg" id="7_f6cy5"]
+[ext_resource type="Texture2D" uid="uid://cqce6orsemgmw" path="res://res/icons/close-fill.svg" id="8_7fpko"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ubm5")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.25
+anchor_top = 0.449667
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_top = 0.199997
+offset_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Resume" parent="Buttons" instance=ExtResource("2_wvvp1")]
+visible = false
+layout_mode = 2
+text = "Resume"
+real_icon = ExtResource("2_8nhlc")
+
+[node name="Restart" parent="Buttons" instance=ExtResource("2_wvvp1")]
+visible = false
+layout_mode = 2
+text = "Restart"
+real_icon = ExtResource("3_yx8xr")
+
+[node name="LevelSelect" parent="Buttons" instance=ExtResource("2_wvvp1")]
+layout_mode = 2
+text = "Level Select"
+real_icon = ExtResource("4_3k06j")
+
+[node name="PlayerSetup" parent="Buttons" instance=ExtResource("2_wvvp1")]
+visible = false
+layout_mode = 2
+text = "Player Setup"
+real_icon = ExtResource("5_gs1wd")
+
+[node name="Options" parent="Buttons" instance=ExtResource("2_wvvp1")]
+visible = false
+layout_mode = 2
+text = "Options"
+real_icon = ExtResource("6_5e4cc")
+
+[node name="Credits" parent="Buttons" instance=ExtResource("2_wvvp1")]
+layout_mode = 2
+text = "Credits"
+real_icon = ExtResource("7_f6cy5")
+
+[node name="Quit" parent="Buttons" instance=ExtResource("2_wvvp1")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+real_icon = ExtResource("8_7fpko")
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+anchor_left = 0.507
+anchor_top = 0.432
+anchor_right = 0.507
+anchor_bottom = 0.432
+offset_left = -129.6
+offset_top = -61.2
+offset_right = 130.4
+offset_bottom = -0.200012
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Roll'n Around"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Buttons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Buttons/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Buttons/LevelSelect" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="Buttons/PlayerSetup" to="." method="_on_player_setup_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]

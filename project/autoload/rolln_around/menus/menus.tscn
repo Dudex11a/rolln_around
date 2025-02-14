@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://lwco7rsdk7ei"]
+
+[ext_resource type="Script" uid="uid://bsfh7tjdd11re" path="res://autoload/rolln_around/menus/menus.gd" id="1_6tl2x"]
+[ext_resource type="PackedScene" uid="uid://bp777ygb0kifp" path="res://autoload/rolln_around/menus/main_menu/main_menu.tscn" id="2_3i60e"]
+[ext_resource type="PackedScene" uid="uid://bgw31yep2p3jg" path="res://autoload/rolln_around/menus/options/options.tscn" id="5_bmtga"]
+[ext_resource type="PackedScene" uid="uid://cilljudmrkyfu" path="res://autoload/rolln_around/menus/level_select/level_select.tscn" id="10_3ertg"]
+[ext_resource type="PackedScene" uid="uid://5vo0qv43gc5h" path="res://autoload/rolln_around/menus/credits/credits.tscn" id="14_eysnb"]
+
+[node name="Menus" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6tl2x")
+
+[node name="MainMenu" parent="." instance=ExtResource("2_3i60e")]
+visible = false
+layout_mode = 1
+
+[node name="LevelSelect" parent="." instance=ExtResource("10_3ertg")]
+visible = false
+layout_mode = 1
+
+[node name="Credits" parent="." instance=ExtResource("14_eysnb")]
+visible = false
+layout_mode = 1
+
+[node name="Options" parent="." instance=ExtResource("5_bmtga")]
+visible = false
+layout_mode = 1

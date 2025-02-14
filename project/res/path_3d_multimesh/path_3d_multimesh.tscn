@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://deb3lty0k4fu0"]
+
+[ext_resource type="Script" uid="uid://bqqorsw27feid" path="res://res/path_3d_multimesh/path_3d_multimesh.gd" id="1_f0sqp"]
+
+[sub_resource type="Curve3D" id="Curve3D_r771d"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5b1sp"]
+resource_local_to_scene = true
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 0.976471, 0.823529, 1)
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_hmn1s"]
+material = SubResource("StandardMaterial3D_5b1sp")
+size = Vector3(0.2, 0.2, 0.8)
+
+[sub_resource type="MultiMesh" id="MultiMesh_tppuv"]
+transform_format = 1
+instance_count = 1
+mesh = SubResource("BoxMesh_hmn1s")
+buffer = PackedFloat32Array(-1.34218e+08, -1.34218e+08, -1.34218e+08, -1.34218e+08, -1.34218e+08, -1.34218e+08, -1.34218e+08, -1.34218e+08, -1.34218e+08, -1.34218e+08, -1.34218e+08, -1.34218e+08)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cj5pv"]
+resource_local_to_scene = true
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.97, 0.94284, 0.7663, 1)
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_4glm0"]
+material = SubResource("StandardMaterial3D_cj5pv")
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="MultiMesh" id="MultiMesh_465eo"]
+transform_format = 1
+mesh = SubResource("BoxMesh_4glm0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wum1"]
+resource_local_to_scene = true
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 0.988235, 0.290196, 1)
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color(1, 0.988235, 0.290196, 1)
+emission_energy_multiplier = 0.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_0bv05"]
+material = SubResource("StandardMaterial3D_7wum1")
+radius = 0.4
+height = 0.75
+rings = 3
+
+[sub_resource type="MultiMesh" id="MultiMesh_5bjoo"]
+transform_format = 1
+instance_count = 3
+mesh = SubResource("SphereMesh_0bv05")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="MultiMesh" id="MultiMesh_jku4o"]
+transform_format = 1
+instance_count = 3
+mesh = SubResource("SphereMesh_0bv05")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[node name="Path3DMultiMesh" type="Path3D"]
+curve = SubResource("Curve3D_r771d")
+script = ExtResource("1_f0sqp")
+default_dotted_multimesh = SubResource("MultiMesh_tppuv")
+default_curve_points_multimesh = SubResource("MultiMesh_465eo")
+
+[node name="DottedMeshInst" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("MultiMesh_5bjoo")
+
+[node name="CurvePointsMeshInst" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("MultiMesh_jku4o")

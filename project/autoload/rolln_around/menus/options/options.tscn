@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgw31yep2p3jg"]
+
+[ext_resource type="PackedScene" uid="uid://c5spe4m1okmgo" path="res://autoload/rolln_around/menus/back_button/back_button.tscn" id="1_cfheb"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" parent="." instance=ExtResource("1_cfheb")]
+layout_mode = 0
+anchor_right = 0.094
+anchor_bottom = 0.125
+offset_left = 0.0
+offset_top = 0.0
+offset_right = -0.200012
+offset_bottom = -7.62939e-06
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true

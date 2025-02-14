@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvh5hs7vxrnu0"]
+
+[ext_resource type="Script" uid="uid://cbkq4flc6a6ri" path="res://autoload/rolln_around/level/objects/player/cosmetics/ball/ball.gd" id="1_x3x4d"]
+
+[node name="BallCosmetic" type="Node3D"]
+script = ExtResource("1_x3x4d")

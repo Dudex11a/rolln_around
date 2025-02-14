@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://qj70xumy6sol"]
+
+[ext_resource type="Script" uid="uid://c4ch4cwya5x4g" path="res://autoload/rolln_around/level/objects/area_trigger/area_trigger.gd" id="1_0vorr"]
+[ext_resource type="PackedScene" uid="uid://dorl2wwde5wjg" path="res://autoload/rolln_around/level/game_mode/components/get_game_mode/get_game_mode.tscn" id="2_67svc"]
+
+[node name="AreaTrigger" type="Node3D"]
+script = ExtResource("1_0vorr")
+
+[node name="Camera" type="Camera3D" parent="."]
+fov = 32.5
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="GetGameMode" parent="." instance=ExtResource("2_67svc")]
+
+[connection signal="got_game_mode" from="GetGameMode" to="." method="_on_get_game_mode_got_game_mode"]

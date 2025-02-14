@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2sv0engpspdg"]
+
+[ext_resource type="PackedScene" uid="uid://btqd5hmjh81bx" path="res://autoload/rolln_around/level/levels/templates/!solo_level_template/!solo_level_template.tscn" id="1_7uacc"]
+[ext_resource type="Material" uid="uid://dfpk7kxmvun82" path="res://res/materials/multisided1.material" id="2_i81yg"]
+[ext_resource type="PackedScene" uid="uid://rmr05eshchfk" path="res://autoload/rolln_around/level/objects/floor_shadow/floor_shadow.tscn" id="4_8g32p"]
+[ext_resource type="PackedScene" uid="uid://b6olvc5swdne3" path="res://autoload/rolln_around/level/levels/old_twitter_examples/bumper_example/diagonal_section_1.tscn" id="4_uofup"]
+[ext_resource type="PackedScene" uid="uid://pkgv4kuu5n7b" path="res://autoload/rolln_around/level/objects/bumper/bumper.tscn" id="6_cy6at"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iebl4"]
+size = Vector3(38, 8, 34)
+
+[node name="BumperExample" instance=ExtResource("1_7uacc")]
+level_name = "Bumper Example"
+level_index = 4
+level_catagory_id = "example"
+
+[node name="Camera3d" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0)
+
+[node name="Geometry" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0)
+
+[node name="CsgBox3d" type="CSGBox3D" parent="Geometry" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.5, 0)
+size = Vector3(6, 1, 10)
+material = ExtResource("2_i81yg")
+
+[node name="CsgBox3d5" type="CSGBox3D" parent="Geometry" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 10.5)
+size = Vector3(11, 3, 11)
+material = ExtResource("2_i81yg")
+
+[node name="DiagonalDirection" type="CSGPolygon3D" parent="Geometry" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.5, 0, 0)
+polygon = PackedVector2Array(-0.5, 5, 0, 5.5, 6, -4.5, 4.5, -5, -0.5, -5)
+material = ExtResource("2_i81yg")
+
+[node name="CsgBox3d6" type="CSGBox3D" parent="Geometry" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 1, 10)
+operation = 2
+size = Vector3(9, 2, 10)
+material = ExtResource("2_i81yg")
+
+[node name="Spawn" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 13)
+
+[node name="CollisionShape3D" parent="OutOfBounds" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="OutOfBounds" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 9.5, 17)
+shape = SubResource("BoxShape3D_iebl4")
+
+[node name="StartAreaTrigger" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="Camera" parent="StartAreaTrigger" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.681998, 0.731354, 0, -0.731354, 0.681998, 0, 23.611, 19.042)
+
+[node name="CollisionShape3D" parent="StartAreaTrigger/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Bumper" parent="." index="8" instance=ExtResource("6_cy6at")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.5, 3, 8)
+
+[node name="FloorShadow" parent="Bumper" index="5" instance=ExtResource("4_8g32p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+
+[node name="BumperLine" type="Node3D" parent="." index="9"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="Bumper" parent="BumperLine" index="0" instance=ExtResource("6_cy6at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Bumper2" parent="BumperLine" index="1" instance=ExtResource("6_cy6at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Bumper3" parent="BumperLine" index="2" instance=ExtResource("6_cy6at")]
+
+[node name="Bumper4" parent="BumperLine" index="3" instance=ExtResource("6_cy6at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Bumper5" parent="BumperLine" index="4" instance=ExtResource("6_cy6at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="BumperLineShort" type="Node3D" parent="." index="10"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 0, -4)
+metadata/_edit_group_ = true
+
+[node name="Bumper" parent="BumperLineShort" index="0" instance=ExtResource("6_cy6at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Bumper2" parent="BumperLineShort" index="1" instance=ExtResource("6_cy6at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="BumperMovingPlatforms" type="Node3D" parent="." index="11"]
+
+[node name="DiagonalSection1" parent="." index="12" instance=ExtResource("4_uofup")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 3, 0, 0)
+
+[editable path="OutOfBounds"]
+[editable path="StartAreaTrigger"]

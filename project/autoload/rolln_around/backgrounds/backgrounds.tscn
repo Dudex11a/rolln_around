@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://e38u8isuxe5"]
+
+[ext_resource type="Script" uid="uid://duebxun5yavet" path="res://autoload/rolln_around/backgrounds/backgrounds.gd" id="1_iddqp"]
+
+[sub_resource type="Gradient" id="Gradient_7r0se"]
+offsets = PackedFloat32Array(0, 0.806897, 1)
+colors = PackedColorArray(0, 0, 0.521569, 1, 0.0530425, 0.406159, 1, 1, 0.816116, 1, 0.962412, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lhxot"]
+gradient = SubResource("Gradient_7r0se")
+fill_from = Vector2(0.5, 0.2)
+fill_to = Vector2(0.5, 1)
+
+[node name="Backgrounds" type="CanvasLayer"]
+script = ExtResource("1_iddqp")
+metadata/is_menu = false
+
+[node name="FullBackground" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="FullBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource("GradientTexture2D_lhxot")
+
+[node name="PartialBackground" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="PartialBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0.184314, 0.745098)

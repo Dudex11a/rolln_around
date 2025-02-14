@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://pkgv4kuu5n7b"]
+
+[ext_resource type="Script" uid="uid://bbqrfiuecwx3o" path="res://autoload/rolln_around/level/objects/bumper/bumper.gd" id="1_4f02d"]
+[ext_resource type="ArrayMesh" uid="uid://dcamo362w1e20" path="res://autoload/rolln_around/level/objects/bumper/res/bumper-5bf75d8b4f67910968bdbd56f59c2023_Circle_003.res" id="2_rs7nw"]
+[ext_resource type="Texture2D" uid="uid://b20sn3icgtih2" path="res://res/textures/hatch_unknown.png" id="3_sse0k"]
+[ext_resource type="ArrayMesh" uid="uid://cln4pq4qjj505" path="res://autoload/rolln_around/level/objects/bumper/res/bumper-5bf75d8b4f67910968bdbd56f59c2023_Cube_001.res" id="4_haeh8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em8vu"]
+resource_local_to_scene = true
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.968627, 0.196078, 0.211765, 1)
+metallic = 0.05
+metallic_specular = 0.0
+roughness = 0.3
+heightmap_scale = 16.0
+heightmap_texture = ExtResource("3_sse0k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i03li"]
+resource_local_to_scene = true
+diffuse_mode = 3
+specular_mode = 1
+metallic = 0.4
+metallic_specular = 0.0
+roughness = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctvmm"]
+resource_local_to_scene = true
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.027451, 0.0588235, 0.0509804, 1)
+roughness = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wnm8f"]
+height = 0.75
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fgfpu"]
+height = 1.36993
+radius = 0.933179
+
+[sub_resource type="Animation" id="Animation_ka2x1"]
+resource_name = "bounce"
+length = 0.4
+step = 0.05
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstanceBounce")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.05, 1, 0.7, 0.95, 0.7, 0.15, 1, 1.4, 1.05, 1.4, 0.25, 1, 0.9, 1, 0.9, 0.4, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tfa7n"]
+_data = {
+&"bounce": SubResource("Animation_ka2x1")
+}
+
+[node name="Bumper" type="Node3D"]
+script = ExtResource("1_4f02d")
+metadata/_edit_group_ = true
+
+[node name="MeshInstanceBounce" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_rs7nw")
+surface_material_override/0 = SubResource("StandardMaterial3D_em8vu")
+surface_material_override/1 = SubResource("StandardMaterial3D_i03li")
+
+[node name="MeshInstancePole" type="MeshInstance3D" parent="."]
+mesh = ExtResource("4_haeh8")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctvmm")
+
+[node name="StaticBody3d" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+shape = SubResource("CylinderShape3D_wnm8f")
+
+[node name="BounceArea" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 3
+collision_mask = 3
+monitorable = false
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="BounceArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.733913, 0)
+shape = SubResource("CylinderShape3D_fgfpu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_tfa7n")
+}
+
+[connection signal="body_shape_entered" from="BounceArea" to="." method="_on_bounce_area_body_shape_entered"]

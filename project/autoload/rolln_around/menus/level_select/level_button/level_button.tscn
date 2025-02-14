@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv65wmeqeuaog"]
+
+[ext_resource type="Script" uid="uid://5rgs87syt2dm" path="res://autoload/rolln_around/menus/level_select/level_button/level_button.gd" id="1_0ycwj"]
+
+[node name="LevelButton" type="Button"]
+custom_minimum_size = Vector2(80, 80)
+anchors_preset = -1
+anchor_right = 0.111
+anchor_bottom = 0.148
+offset_right = 0.0799942
+offset_bottom = 0.0800018
+theme_type_variation = &"LevelButton"
+text = "1"
+script = ExtResource("1_0ycwj")
+
+[connection signal="focus_entered" from="." to="." method="_on_hovered"]
+[connection signal="mouse_entered" from="." to="." method="_on_hovered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg08qiow72ieb"]
+
+[ext_resource type="Script" uid="uid://g4fmyudxe3t" path="res://autoload/rolln_around/level/components/spin_nodes/spin_nodes.gd" id="1_07abo"]
+[ext_resource type="PackedScene" uid="uid://dorl2wwde5wjg" path="res://autoload/rolln_around/level/game_mode/components/get_game_mode/get_game_mode.tscn" id="2_6xc7q"]
+
+[node name="SpinNodes" type="Node"]
+script = ExtResource("1_07abo")
+
+[node name="GetGameMode" parent="." instance=ExtResource("2_6xc7q")]

@@ -1,0 +1,13 @@
+[gd_resource type="Theme" format=3 uid="uid://chp36d0vdbcvy"]
+
+[resource]
+default_font_size = 20
+LevelButton/base_type = &"Button"
+LevelButton/colors/font_outline_color = Color(0, 0, 0, 1)
+LevelButton/constants/outline_size = 10
+LevelButton/font_sizes/font_size = 40
+LevelButtonLabel/base_type = &"Label"
+LevelButtonLabel/colors/font_color = Color(1, 1, 1, 1)
+LevelButtonLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+LevelButtonLabel/constants/outline_size = 10
+LevelButtonLabel/font_sizes/font_size = 40

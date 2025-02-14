@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://chke3okqduyug"]
+
+[ext_resource type="Script" uid="uid://b2pk8ynxp5bd7" path="res://remove_from_release/tools/generate_levels_metadata/generate_levels_metadata.gd" id="1_6ahsx"]
+
+[node name="GenerateLevelMetadata" type="Node"]
+script = ExtResource("1_6ahsx")
+export_file = "res://data/levels_metadata.json"

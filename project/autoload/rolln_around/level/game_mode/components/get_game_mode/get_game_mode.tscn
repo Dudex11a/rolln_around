@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dorl2wwde5wjg"]
+
+[ext_resource type="Script" uid="uid://kob13wudopwb" path="res://autoload/rolln_around/level/game_mode/components/get_game_mode/get_game_mode.gd" id="1_u86il"]
+[ext_resource type="PackedScene" uid="uid://sm614fu7atlb" path="res://autoload/rolln_around/level/components/get_level/get_level.tscn" id="2_bu532"]
+
+[node name="GetGameMode" type="Node"]
+script = ExtResource("1_u86il")
+
+[node name="GetLevel" parent="." instance=ExtResource("2_bu532")]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cve34nj43mxl7"]
+
+[ext_resource type="Script" uid="uid://dhmmms7mngij" path="res://addons/EditorFlyCam/ViewportContainer.gd" id="1"]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer"]
+custom_minimum_size = Vector2(0, 200)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+stretch_mode = 1
+
+[node name="CamView" type="SubViewportContainer" parent="."]
+layout_mode = 2
+stretch = true
+script = ExtResource("1")
+
+[node name="Viewport" type="SubViewport" parent="CamView"]
+handle_input_locally = false
+gui_disable_input = true
+gui_snap_controls_to_pixels = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="Camera" type="Camera3D" parent="CamView/Viewport"]

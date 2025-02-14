@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdurkow7f1jpm"]
+
+[ext_resource type="Script" uid="uid://iwykrs7apcjb" path="res://addons/EditorBakeTool/Settings/SettingsItem/SettingsItem.gd" id="1_q0nvj"]
+
+[node name="SettingsItem" type="Control"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+mouse_filter = 1
+script = ExtResource("1_q0nvj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 41.0
+grow_horizontal = 2
+
+[node name="FileLineEdit" type="LineEdit" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Editor Bake Tool Path"
+
+[node name="FileDialogButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "File"
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="DeleteButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Delete"
+
+[node name="ErrorLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 26.0
+
+[connection signal="text_changed" from="HBoxContainer/FileLineEdit" to="." method="_on_file_line_edit_text_changed"]
+[connection signal="pressed" from="HBoxContainer/FileDialogButton" to="." method="_on_file_dialog_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/DeleteButton" to="." method="_on_delete_button_pressed"]

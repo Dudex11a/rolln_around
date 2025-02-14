@@ -1,0 +1,213 @@
+{
+  "main": {
+    "id": "380c471151c78f7c",
+    "type": "split",
+    "children": [
+      {
+        "id": "c56dc1f65e4b7f00",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d7ad92c8d669c19a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2ca2d169ad7e3214",
+    "type": "split",
+    "children": [
+      {
+        "id": "487a9953399508c5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a4f0eea1a17bb3f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5a2e4f2285f3d2b5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "459b5aa87f26fcf7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e43b0b62eaaf1a86",
+    "type": "split",
+    "children": [
+      {
+        "id": "d6d1c09c3a428fba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6d08a68382c8e22b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for README"
+            }
+          },
+          {
+            "id": "43244d9f53b2c52c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from README"
+            }
+          },
+          {
+            "id": "00fb68fc974f631a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "7cabb748af068f70",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "d7ad92c8d669c19a",
+  "lastOpenFiles": [
+    "project/res/icons/twitch-fill.svg.import",
+    "project/res/icons/play-list-2-fill.svg.import",
+    "project/res/icons/arrow-right-fill.svg.import",
+    "LICENSE",
+    "title_image.png",
+    "project/autoload/rolln_around/level/levels/world_01/up_the_steps/up_the_steps.tscn5928950031.tmp",
+    "project/autoload/rolln_around/menus/main_menu/main_menu.tscn5928508271.tmp",
+    "project/autoload/rolln_around/menus/level_select/level_select.tscn5904961401.tmp",
+    "project/res/icons/youtube-fill.svg.import",
+    "project/res/icons/arrow-left-fill.svg.import",
+    "project/res/icons/close-fill.svg.import",
+    "project/res/icons/settings-4-fill.svg.import",
+    "itch_thumbnail.png",
+    "notes/TODO.md",
+    "notes/TODO Completed.md",
+    "notes/Thoughts.md",
+    "notes/Design.md",
+    "notes/video_scripts/Video 1 - Script Thoughts.md",
+    "Excalidraw/world_level_editor.excalidraw.md",
+    "notes/2024-07-23 Thoughts After Dominic.md",
+    "README.md",
+    "notes/Level Objects.md",
+    "Excalidraw/the_basics.excalidraw.md",
+    "project/autoload/rolln_around/level/levels/world_01/jump_across/res/jump_across_bricks-12_sbs-pack-1_edit-1.png",
+    "project/autoload/rolln_around/level/levels/world_01/jump_across/res/jump_across_bricks-17_sbs-pack-1_edit-1.png",
+    "project/autoload/rolln_around/level/levels/world_01/jump_across/res/jump_across_tile-15_sbs-pack-1_edit-1.png",
+    "project/autoload/rolln_around/level/objects/spawn/res/tee_tee_texture.png",
+    "project/res/textures/tile-15_sbs-pack-1_edit-1.png",
+    "project/res/textures/tile-15_sbs-pack-1.png",
+    "project/res/textures/bricks-17_sbs-pack-1_edit-1.png",
+    "project/res/textures/Bricks_17-128x128.png",
+    "Excalidraw/double_doughnut.excalidraw.md",
+    "Excalidraw/half-pipe.excalidraw.md",
+    "Excalidraw/many_spoons.excalidraw.md",
+    "Excalidraw/up_the_steps.excalidraw.md",
+    "Excalidraw/a_change_in_perspective.excalidraw.md",
+    "Excalidraw/well_timed_jumps_top_down_view.excalidraw.md",
+    "project/todo.md"
+  ]
+}

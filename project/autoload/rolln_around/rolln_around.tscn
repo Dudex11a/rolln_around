@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b14xs5h6cdeva"]
+
+[ext_resource type="Script" uid="uid://v5nttok7nucj" path="res://autoload/rolln_around/rolln_around.gd" id="1_uyvmy"]
+[ext_resource type="PackedScene" uid="uid://cms3n8a30fqj1" path="res://autoload/rolln_around/level/objects/player/player.tscn" id="2_1rxeg"]
+[ext_resource type="PackedScene" uid="uid://e38u8isuxe5" path="res://autoload/rolln_around/backgrounds/backgrounds.tscn" id="3_848i5"]
+[ext_resource type="PackedScene" uid="uid://lwco7rsdk7ei" path="res://autoload/rolln_around/menus/menus.tscn" id="3_ex56t"]
+
+[node name="RollnAround" type="Node"]
+script = ExtResource("1_uyvmy")
+
+[node name="Backgrounds" parent="." instance=ExtResource("3_848i5")]
+
+[node name="FullBackground" parent="Backgrounds" index="0"]
+visible = false
+
+[node name="World" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Player" parent="World" instance=ExtResource("2_1rxeg")]
+unique_name_in_owner = true
+
+[node name="Camera" type="Camera3D" parent="World"]
+unique_name_in_owner = true
+current = true
+
+[node name="Interactive2D" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+follow_viewport_enabled = true
+
+[node name="Menus" parent="Interactive2D" instance=ExtResource("3_ex56t")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+metadata/_edit_use_anchors_ = true
+
+[editable path="Backgrounds"]

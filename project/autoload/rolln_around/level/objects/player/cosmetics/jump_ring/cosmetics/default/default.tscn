@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhuidbk1eca64"]
+
+[ext_resource type="PackedScene" uid="uid://b776jn6evscgr" path="res://autoload/rolln_around/level/objects/player/cosmetics/jump_ring/jump_ring.tscn" id="1_y8mer"]
+[ext_resource type="Script" uid="uid://b5fwgdrl65gmk" path="res://autoload/rolln_around/level/objects/player/cosmetics/jump_ring/cosmetics/default/default.gd" id="2_ymh7n"]
+[ext_resource type="ArrayMesh" uid="uid://277ksne4p1kb" path="res://autoload/rolln_around/level/objects/player/res/ball_Torus.res" id="3_5neno"]
+[ext_resource type="Material" uid="uid://bv1x2m8up02h6" path="res://autoload/rolln_around/level/objects/player/res/ring.material" id="4_opkb0"]
+
+[node name="JumpRingCosmetic" instance=ExtResource("1_y8mer")]
+script = ExtResource("2_ymh7n")
+
+[node name="JumpRingMesh" type="MeshInstance3D" parent="." index="0"]
+unique_name_in_owner = true
+mesh = ExtResource("3_5neno")
+surface_material_override/0 = ExtResource("4_opkb0")

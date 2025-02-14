@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://btqd5hmjh81bx"]
+
+[ext_resource type="PackedScene" uid="uid://dkjh2j3pmjt4t" path="res://autoload/rolln_around/level/level.tscn" id="1_63nap"]
+[ext_resource type="PackedScene" uid="uid://dblp1qvk5f0i" path="res://autoload/rolln_around/level/game_mode/game_modes/solo_level/solo_level.tscn" id="6_8tbr8"]
+
+[node name="SoloLevelTemplate" instance=ExtResource("1_63nap")]
+
+[node name="SoloLevel" parent="." index="4" instance=ExtResource("6_8tbr8")]
+
+[editable path="OutOfBounds"]
+[editable path="StartAreaTrigger"]

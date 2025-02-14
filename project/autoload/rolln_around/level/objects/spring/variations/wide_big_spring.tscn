@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ltheadgi7t1k"]
+
+[ext_resource type="PackedScene" uid="uid://dutkgxe02gaky" path="res://autoload/rolln_around/level/objects/spring/spring.tscn" id="1_r0kgr"]
+
+[node name="WideBigSpring" instance=ExtResource("1_r0kgr")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+strength = 5.0
+
+[node name="Bottom" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

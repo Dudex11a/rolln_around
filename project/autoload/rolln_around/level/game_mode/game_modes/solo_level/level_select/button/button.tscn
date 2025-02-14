@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=3 uid="uid://bci02ihosb4xs"]
+
+[ext_resource type="PackedScene" uid="uid://bv65wmeqeuaog" path="res://autoload/rolln_around/menus/level_select/level_button/level_button.tscn" id="1_5rsa3"]
+[ext_resource type="Script" uid="uid://drlvyegeglv2r" path="res://autoload/rolln_around/level/game_mode/game_modes/solo_level/level_select/button/button.gd" id="2_gx1oj"]
+[ext_resource type="Texture2D" uid="uid://wd564ptiqbq3" path="res://autoload/rolln_around/level/game_mode/game_modes/solo_level/level_select/button/res/empty_complete.png" id="3_f4inm"]
+[ext_resource type="Texture2D" uid="uid://dtibqa68hm0q5" path="res://autoload/rolln_around/level/game_mode/game_modes/solo_level/level_select/button/res/checkmark_icon_complete.png" id="4_jgvqk"]
+[ext_resource type="Texture2D" uid="uid://bfvj4iaul3vih" path="res://autoload/rolln_around/level/game_mode/game_modes/solo_level/level_select/button/res/spoon_icon_complete.png" id="5_k3le3"]
+
+[node name="SoloLevelButton" instance=ExtResource("1_5rsa3")]
+text = ""
+script = ExtResource("2_gx1oj")
+amount_of_spoons = 0
+
+[node name="SimpleIDLabel" type="Label" parent="." index="0"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"LevelButtonLabel"
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="LevelCompleted" type="Control" parent="." index="1"]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.012
+anchor_top = 0.037
+anchor_right = 0.325
+anchor_bottom = 0.35
+offset_left = 0.04
+offset_top = 0.04
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="EmptyCompletedIcon" type="TextureRect" parent="LevelCompleted" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_f4inm")
+expand_mode = 2
+
+[node name="LevelCompletedIcon" type="TextureRect" parent="LevelCompleted" index="1"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_jgvqk")
+expand_mode = 2
+
+[node name="_Completed" type="Control" parent="." index="2"]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.35
+anchor_top = 0.037
+anchor_right = 0.662
+anchor_bottom = 0.35
+offset_top = 0.04
+offset_right = 0.0399933
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="EmptyCompletedIcon" type="TextureRect" parent="_Completed" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_f4inm")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="_Completed" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="SpoonCompleted" type="Control" parent="." index="3"]
+unique_name_in_owner = true
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.675
+anchor_top = 0.037
+anchor_right = 0.987
+anchor_bottom = 0.35
+offset_top = 0.04
+offset_right = 0.0399933
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="EmptyCompletedIcon" type="TextureRect" parent="SpoonCompleted" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_f4inm")
+expand_mode = 2
+
+[node name="SpoonCompletedIcon" type="TextureRect" parent="SpoonCompleted" index="1"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_k3le3")
+expand_mode = 2

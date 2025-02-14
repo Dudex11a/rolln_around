@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbo5n37xsvj6m"]
+
+[ext_resource type="Script" uid="uid://3gx3sfsl4v6v" path="res://autoload/rolln_around/level/components/two_point_moving_node/two_point_moving_node.gd" id="1_13wky"]
+[ext_resource type="PackedScene" uid="uid://dorl2wwde5wjg" path="res://autoload/rolln_around/level/game_mode/components/get_game_mode/get_game_mode.tscn" id="2_y8a4n"]
+
+[node name="TwoPointMovingNode" type="Node"]
+script = ExtResource("1_13wky")
+
+[node name="GetGameMode" parent="." instance=ExtResource("2_y8a4n")]
+unique_name_in_owner = true

@@ -1,0 +1,37 @@
+{
+	"!solo_level_template": {
+		"catagory": "template",
+		"index": 1,
+		"name": "Solo Level Template"
+	},
+	"boost_panel_example": {
+		"catagory": "example",
+		"index": 3,
+		"name": "Boost Panel Example"
+	},
+	"bumper_example": {
+		"catagory": "example",
+		"index": 4,
+		"name": "Bumper Example"
+	},
+	"moving_platform_example": {
+		"catagory": "example",
+		"index": 1,
+		"name": "Moving Platform Example"
+	},
+	"spring_example": {
+		"catagory": "example",
+		"index": 2,
+		"name": "Spring Example"
+	},
+	"test_level": {
+		"catagory": "testing",
+		"index": 100,
+		"name": "Test Level"
+	},
+	"test_level_2": {
+		"catagory": "testing",
+		"index": 101,
+		"name": "Test Level 2"
+	}
+}

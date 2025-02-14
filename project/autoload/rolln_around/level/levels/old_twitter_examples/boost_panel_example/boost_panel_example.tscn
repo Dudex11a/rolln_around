@@ -1,0 +1,484 @@
+[gd_scene load_steps=30 format=3 uid="uid://c3g7anes8s203"]
+
+[ext_resource type="PackedScene" uid="uid://dkjh2j3pmjt4t" path="res://autoload/rolln_around/level/level.tscn" id="1_63nap"]
+[ext_resource type="Material" uid="uid://dfpk7kxmvun82" path="res://res/materials/multisided1.material" id="2_h3nlb"]
+[ext_resource type="Shader" uid="uid://dbyhv0fc55nk0" path="res://res/shaders/multisided.gdshader" id="3_huj84"]
+[ext_resource type="Texture2D" uid="uid://21sb1l8203y1" path="res://res/textures/tile-16_sbs-pack-1.png" id="4_glexj"]
+[ext_resource type="PackedScene" uid="uid://qj70xumy6sol" path="res://autoload/rolln_around/level/objects/area_trigger/area_trigger.tscn" id="5_btm7s"]
+[ext_resource type="Texture2D" uid="uid://c0ajaqi5jfq8t" path="res://res/textures/z_old_Bricks_05-128x128.png" id="5_fshvu"]
+[ext_resource type="PackedScene" uid="uid://dblp1qvk5f0i" path="res://autoload/rolln_around/level/game_mode/game_modes/solo_level/solo_level.tscn" id="6_d2oex"]
+[ext_resource type="Shader" uid="uid://cmqo0rgpk4of1" path="res://autoload/rolln_around/level/objects/boost_panel/res/boost_panel_1.gdshader" id="7_8wmvl"]
+[ext_resource type="PackedScene" uid="uid://bli17cnpquvmp" path="res://autoload/rolln_around/level/objects/boost_panel/boost_panel.tscn" id="7_65kdx"]
+[ext_resource type="Texture2D" uid="uid://8g047w2j311w" path="res://autoload/rolln_around/level/objects/boost_panel/res/boost_panel_top.png" id="10_ahse4"]
+[ext_resource type="PackedScene" uid="uid://b1sp8bxmj5ilo" path="res://autoload/rolln_around/level/objects/goal/goal_ring.tscn" id="13_cod5n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1hkjm"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_huj84")
+shader_parameter/slope_factor = 8.0
+shader_parameter/texture_albedo_side = ExtResource("5_fshvu")
+shader_parameter/texture_albedo_bottom = ExtResource("4_glexj")
+shader_parameter/albedo = Color(1, 0.631373, 0.607843, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.5, 0.5, 0.5)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0l62n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_725xo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxie4"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_huj84")
+shader_parameter/slope_factor = 8.0
+shader_parameter/texture_albedo_top = SubResource("CompressedTexture2D_725xo")
+shader_parameter/texture_albedo_side = ExtResource("4_glexj")
+shader_parameter/texture_albedo_bottom = SubResource("CompressedTexture2D_0l62n")
+shader_parameter/albedo = Color(0.513726, 1, 1, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.5, 0.5, 0.5)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yl6h6"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_huj84")
+shader_parameter/slope_factor = 8.0
+shader_parameter/texture_albedo_top = SubResource("CompressedTexture2D_725xo")
+shader_parameter/texture_albedo_side = ExtResource("4_glexj")
+shader_parameter/texture_albedo_bottom = SubResource("CompressedTexture2D_0l62n")
+shader_parameter/albedo = Color(0.72, 0.4824, 0.60516, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.5, 0.5, 0.5)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2g84o"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_huj84")
+shader_parameter/slope_factor = 8.0
+shader_parameter/texture_albedo_top = SubResource("CompressedTexture2D_725xo")
+shader_parameter/texture_albedo_side = ExtResource("4_glexj")
+shader_parameter/texture_albedo_bottom = SubResource("CompressedTexture2D_0l62n")
+shader_parameter/albedo = Color(0.807843, 0.858824, 0.627451, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.2, 0.2, 0.2)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uhiey"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftnp6"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_8wmvl")
+shader_parameter/top_albedo = Color(0.207843, 0.909804, 0.101961, 1)
+shader_parameter/bottom_albedo = Color(0.58, 1, 0.811, 1)
+shader_parameter/top_texture_albedo = ExtResource("10_ahse4")
+shader_parameter/bottom_texture_albedo = SubResource("CompressedTexture2D_uhiey")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.1
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.4
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jtgjq"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_8wmvl")
+shader_parameter/top_albedo = Color(0.956863, 0.847059, 0.964706, 1)
+shader_parameter/bottom_albedo = Color(1, 0.658824, 0.988235, 1)
+shader_parameter/top_texture_albedo = ExtResource("10_ahse4")
+shader_parameter/bottom_texture_albedo = SubResource("CompressedTexture2D_uhiey")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.1
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.4
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o1ugw"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_8wmvl")
+shader_parameter/top_albedo = Color(0.956863, 0.431373, 0.964706, 1)
+shader_parameter/bottom_albedo = Color(0.945098, 0.188235, 0.533333, 1)
+shader_parameter/top_texture_albedo = ExtResource("10_ahse4")
+shader_parameter/bottom_texture_albedo = SubResource("CompressedTexture2D_uhiey")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.1
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.4
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gk3oq"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_8wmvl")
+shader_parameter/top_albedo = Color(0.576471, 0.105882, 0.564706, 1)
+shader_parameter/bottom_albedo = Color(1, 0.862745, 0.996078, 1)
+shader_parameter/top_texture_albedo = ExtResource("10_ahse4")
+shader_parameter/bottom_texture_albedo = SubResource("CompressedTexture2D_uhiey")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.1
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.4
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fmp2"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_8wmvl")
+shader_parameter/top_albedo = Color(0.1001, 0.91, 0.140595, 1)
+shader_parameter/bottom_albedo = Color(0.58, 1, 0.867, 1)
+shader_parameter/top_texture_albedo = ExtResource("10_ahse4")
+shader_parameter/bottom_texture_albedo = SubResource("CompressedTexture2D_uhiey")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.1
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.4
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cgq7k"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_8wmvl")
+shader_parameter/top_albedo = Color(0.1001, 0.842508, 0.91, 1)
+shader_parameter/bottom_albedo = Color(0.58, 1, 0.972, 1)
+shader_parameter/top_texture_albedo = ExtResource("10_ahse4")
+shader_parameter/bottom_texture_albedo = SubResource("CompressedTexture2D_uhiey")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.1
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.4
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pnjly"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_8wmvl")
+shader_parameter/top_albedo = Color(0.792157, 0.933333, 1, 1)
+shader_parameter/bottom_albedo = Color(0.58, 0.951, 1, 1)
+shader_parameter/top_texture_albedo = ExtResource("10_ahse4")
+shader_parameter/bottom_texture_albedo = SubResource("CompressedTexture2D_uhiey")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.1
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.4
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5jlel"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_8wmvl")
+shader_parameter/top_albedo = Color(0.1001, 0.91, 0.856007, 1)
+shader_parameter/bottom_albedo = Color(0.58, 0.881, 1, 1)
+shader_parameter/top_texture_albedo = ExtResource("10_ahse4")
+shader_parameter/bottom_texture_albedo = SubResource("CompressedTexture2D_uhiey")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.1
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.4
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0a0ka"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_8wmvl")
+shader_parameter/top_albedo = Color(0.184314, 0.647059, 0.909804, 1)
+shader_parameter/bottom_albedo = Color(0.34902, 0.647059, 1, 1)
+shader_parameter/top_texture_albedo = ExtResource("10_ahse4")
+shader_parameter/bottom_texture_albedo = SubResource("CompressedTexture2D_uhiey")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.1
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.4
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/speed = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3px6u"]
+size = Vector3(12, 20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8u4e6"]
+size = Vector3(18, 20, 20)
+
+[node name="BoostPanelExample" instance=ExtResource("1_63nap")]
+level_name = "Boost Panel Example"
+level_index = 3
+level_catagory_id = "example"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -0.5, -5.5)
+size = Vector3(16, 12, 1)
+material = ExtResource("2_h3nlb")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -2.5)
+size = Vector3(7, 1, 6)
+material = ExtResource("2_h3nlb")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry" index="2"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 34, 11.5, -6.5)
+size = Vector3(20, 16, 1)
+material = SubResource("ShaderMaterial_1hkjm")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry" index="3"]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 40, 33, -4.5)
+size = Vector3(20, 20, 6)
+material = SubResource("ShaderMaterial_mxie4")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry" index="4"]
+transform = Transform3D(0.866025, -0.5, 1.93572e-07, 0.5, 0.866025, 1.11759e-07, -2.23517e-07, 0, 1, -0.5, 45, -12.5)
+size = Vector3(35, 39, 2)
+material = SubResource("ShaderMaterial_yl6h6")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry" index="5"]
+transform = Transform3D(0.707106, -2.10734e-08, 0.707107, 2.98023e-08, 1, 7.10543e-15, -0.707107, 2.10734e-08, 0.707106, -0.5, -31.5, 0)
+size = Vector3(121, 39, 88)
+material = SubResource("ShaderMaterial_2g84o")
+
+[node name="Spawn" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -2.5)
+
+[node name="SoloLevel" parent="." index="6" instance=ExtResource("6_d2oex")]
+
+[node name="BoostPanel" parent="." index="7" instance=ExtResource("7_65kdx")]
+transform = Transform3D(-3.78552e-08, -0.5, -0.866025, -2.18557e-08, 0.866025, -0.5, 1, 0, -4.37114e-08, 8.5, 2, -2.5)
+scalar = 2.5
+overwrite_velocity = true
+
+[node name="BoostPanel2" parent="." index="8" instance=ExtResource("7_65kdx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -2.5)
+
+[node name="BoostPanel3" parent="." index="9" instance=ExtResource("7_65kdx")]
+transform = Transform3D(7.29254e-08, -0.258819, -0.965926, 1.95403e-08, 0.965926, -0.258819, 1, 0, 7.54979e-08, 5, 0.5, -2.5)
+scalar = 1.5
+overwrite_velocity = true
+
+[node name="BoostPanel4" parent="." index="10" instance=ExtResource("7_65kdx")]
+transform = Transform3D(3.01316e-08, -0.999953, -0.00979097, -5.96046e-08, 0.00979132, -0.999952, 1, 1.96509e-07, 0, 30.7854, 10.63, -2.5)
+scalar = 2.0
+overwrite_velocity = true
+
+[node name="Cube" parent="BoostPanel4/boost_panel" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_ftnp6")
+
+[node name="BoostPanel5" parent="." index="11" instance=ExtResource("7_65kdx")]
+transform = Transform3D(0.866026, -0.43544, 0.245748, -3.65533e-08, -0.491497, -0.870879, 0.5, 0.754205, -0.425649, 30.7854, 30.63, -2.5)
+scalar = 2.0
+overwrite_velocity = true
+
+[node name="Cube" parent="BoostPanel5/boost_panel" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_jtgjq")
+
+[node name="CollisionShape3D" parent="BoostPanel5/Area3D" index="0"]
+transform = Transform3D(1, -5.96046e-08, 4.47035e-08, 0, 1, -5.96046e-08, 0, 0, 1, 0, 0.0405884, 1.90735e-06)
+
+[node name="BoostPanel6" parent="." index="12" instance=ExtResource("7_65kdx")]
+transform = Transform3D(-0.750901, -0.25721, -0.608269, -0.181037, 0.965928, -0.18496, 0.635117, -0.0287672, -0.771881, 28.3568, 38.234, 0.192895)
+scalar = 2.0
+overwrite_velocity = true
+
+[node name="Cube" parent="BoostPanel6/boost_panel" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_o1ugw")
+
+[node name="CollisionShape3d" parent="BoostPanel6/boost_panel/Cube/StaticBody3d" index="0"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 4.65661e-10, -2.98023e-08, -4.65661e-10, 1, 0, 0, 0)
+
+[node name="BoostPanel7" parent="." index="13" instance=ExtResource("7_65kdx")]
+transform = Transform3D(0.238307, 0.252083, 0.937905, 0.801637, 0.494121, -0.33649, -0.548262, 0.832046, -0.084327, 35.6232, 38.4755, 8.75097)
+scalar = 3.0
+overwrite_velocity = true
+
+[node name="Cube" parent="BoostPanel7/boost_panel" index="0"]
+transform = Transform3D(1, 0, 1.86265e-08, 2.98023e-08, 1, 3.72529e-08, 1.49012e-08, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_gk3oq")
+metadata/_edit_lock_ = true
+
+[node name="BoostPanel9" parent="." index="14" instance=ExtResource("7_65kdx")]
+transform = Transform3D(-3.09087e-08, 0.707107, 0.707107, 3.09087e-08, 0.707107, -0.707108, -1, -2.11758e-22, -4.37114e-08, 1.1232, 38.4755, 11.251)
+scalar = 1.5
+overwrite_velocity = true
+
+[node name="Cube" parent="BoostPanel9/boost_panel" index="0"]
+transform = Transform3D(1, 0, 1.86265e-08, 2.98023e-08, 1, 3.72529e-08, 1.49012e-08, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_ftnp6")
+metadata/_edit_lock_ = true
+
+[node name="BoostPanel10" parent="." index="15" instance=ExtResource("7_65kdx")]
+transform = Transform3D(3.09087e-08, 0.707107, -0.707108, 3.09087e-08, -0.707107, -0.707107, -1, -2.11758e-22, -4.37114e-08, -3.3768, 44.9755, 11.251)
+scalar = 1.5
+overwrite_velocity = true
+
+[node name="Cube" parent="BoostPanel10/boost_panel" index="0"]
+transform = Transform3D(1, 0, 1.86265e-08, 2.98023e-08, 1, 3.72529e-08, 1.49012e-08, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_4fmp2")
+metadata/_edit_lock_ = true
+
+[node name="BoostPanel11" parent="." index="16" instance=ExtResource("7_65kdx")]
+transform = Transform3D(3.09087e-08, -0.707108, -0.707107, -3.09087e-08, -0.707107, 0.707108, -1, -2.11758e-22, -4.37114e-08, 1.1232, 47.9755, 11.251)
+scalar = 1.5
+overwrite_velocity = true
+
+[node name="Cube" parent="BoostPanel11/boost_panel" index="0"]
+transform = Transform3D(1, 0, 1.86265e-08, 2.98023e-08, 1, 3.72529e-08, 1.49012e-08, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_cgq7k")
+metadata/_edit_lock_ = true
+
+[node name="BoostPanel8" parent="." index="17" instance=ExtResource("7_65kdx")]
+transform = Transform3D(-3.09087e-08, -0.707107, 0.707108, -3.09087e-08, 0.707107, 0.707108, -1, 0, -4.37114e-08, 2.6232, 43.9755, 11.251)
+scalar = 1.5
+overwrite_velocity = true
+
+[node name="Cube" parent="BoostPanel8/boost_panel" index="0"]
+transform = Transform3D(1, 0, 1.86265e-08, 2.98023e-08, 1, 3.72529e-08, 1.49012e-08, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_pnjly")
+metadata/_edit_lock_ = true
+
+[node name="BoostPanel12" parent="." index="18" instance=ExtResource("7_65kdx")]
+transform = Transform3D(-3.09087e-08, 0.707107, 0.707107, 3.09087e-08, 0.707107, -0.707108, -1, -2.11758e-22, -4.37114e-08, -3.3768, 36.9755, 11.251)
+scalar = 1.5
+overwrite_velocity = true
+
+[node name="Cube" parent="BoostPanel12/boost_panel" index="0"]
+transform = Transform3D(1, 0, 1.86265e-08, 2.98023e-08, 1, 3.72529e-08, 1.49012e-08, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_5jlel")
+metadata/_edit_lock_ = true
+
+[node name="BoostPanel13" parent="." index="19" instance=ExtResource("7_65kdx")]
+transform = Transform3D(0.00879772, 0.996603, -0.0818999, -0.126257, -0.0801405, -0.988756, -0.99196, 0.0190392, 0.125122, -7.8768, 41.4755, 11.251)
+scalar = 2.0
+overwrite_velocity = true
+
+[node name="Cube" parent="BoostPanel13/boost_panel" index="0"]
+transform = Transform3D(1, 0, 1.86265e-08, 2.98023e-08, 1, 3.72529e-08, 1.49012e-08, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_0a0ka")
+metadata/_edit_lock_ = true
+
+[node name="Camera" parent="StartAreaTrigger" index="0"]
+transform = Transform3D(0.292373, -0.182472, -0.938734, 0, 0.981627, -0.19081, 0.956304, 0.0557876, 0.287001, -1.80771, 0.807859, -1.17466)
+fov = 120.0
+
+[node name="AreaTrigger2" parent="." index="21" instance=ExtResource("5_btm7s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 8.5, -2.5)
+
+[node name="Camera" parent="AreaTrigger2" index="0"]
+transform = Transform3D(0.866025, 0.0301267, -0.499093, 0, 0.998183, 0.0602533, 0.500001, -0.0521808, 0.864451, -9.89016, 2.94398, 16.2843)
+
+[node name="CollisionShape3D" parent="AreaTrigger2/Area3D" index="0"]
+shape = SubResource("BoxShape3D_3px6u")
+
+[node name="AreaTrigger3" parent="." index="22" instance=ExtResource("5_btm7s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 28.5, -2.5)
+
+[node name="Camera" parent="AreaTrigger3" index="0"]
+transform = Transform3D(0.760407, -0.101596, -0.641451, 0, 0.987688, -0.156435, 0.649447, 0.118954, 0.751045, -20.3767, 1.33335, 33.3169)
+
+[node name="CollisionShape3D" parent="AreaTrigger3/Area3D" index="0"]
+shape = SubResource("BoxShape3D_3px6u")
+
+[node name="AreaTrigger4" parent="." index="23" instance=ExtResource("5_btm7s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 41.5, 10)
+
+[node name="Camera" parent="AreaTrigger4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.999968, -0.00801099, 0, 0.00801098, 0.999968, -15.8767, 1.83335, 33.3169)
+fov = 44.5
+
+[node name="CollisionShape3D" parent="AreaTrigger4/Area3D" index="0"]
+shape = SubResource("BoxShape3D_8u4e6")
+
+[node name="AreaTrigger5" parent="." index="24" instance=ExtResource("5_btm7s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 61.5, 10)
+
+[node name="Camera" parent="AreaTrigger5" index="0"]
+transform = Transform3D(-4.36944e-08, 0.999611, -0.0279041, -1.21973e-09, 0.0279041, 0.999611, 1, 4.37114e-08, 1.88738e-15, 0.623301, 6.83335, -5.3974)
+fov = 44.5
+
+[node name="CollisionShape3D" parent="AreaTrigger5/Area3D" index="0"]
+shape = SubResource("BoxShape3D_8u4e6")
+
+[node name="Goal" parent="." index="25" instance=ExtResource("13_cod5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 17, -1)
+
+[editable path="OutOfBounds"]
+[editable path="BoostPanel4"]
+[editable path="BoostPanel4/boost_panel"]
+[editable path="BoostPanel5"]
+[editable path="BoostPanel5/boost_panel"]
+[editable path="BoostPanel6"]
+[editable path="BoostPanel6/boost_panel"]
+[editable path="BoostPanel7"]
+[editable path="BoostPanel7/boost_panel"]
+[editable path="BoostPanel9"]
+[editable path="BoostPanel9/boost_panel"]
+[editable path="BoostPanel10"]
+[editable path="BoostPanel10/boost_panel"]
+[editable path="BoostPanel11"]
+[editable path="BoostPanel11/boost_panel"]
+[editable path="BoostPanel8"]
+[editable path="BoostPanel8/boost_panel"]
+[editable path="BoostPanel12"]
+[editable path="BoostPanel12/boost_panel"]
+[editable path="BoostPanel13"]
+[editable path="BoostPanel13/boost_panel"]
+[editable path="StartAreaTrigger"]
+[editable path="AreaTrigger2"]
+[editable path="AreaTrigger3"]
+[editable path="AreaTrigger4"]
+[editable path="AreaTrigger5"]

@@ -1,0 +1,39 @@
+{
+	"testing": {
+		"index" : 102,
+		"name" : "Testing",
+		"colors": ["#AAAAAA"]
+	},
+	"misc": {
+		"index" : 99,
+		"name" : "Misc",
+		"colors": ["#CCAAAA"]
+	},
+	"apple": {
+		"index" : 1,
+		"name" : "Apple",
+		"colors": ["#FF0000"]
+	},
+	"orange": {
+		"index" : 50,
+		"name" : "Orange",
+		"colors": ["#FF0000"]
+	},
+	"example": {
+		"index" : 101,
+		"name" : "Example",
+		"colors" : ["#FF0000"]
+	},
+	"template": {
+		"index" : 102,
+		"name" : "Template",
+		"colors" : ["#FF0000"],
+		"visible" : false
+	},
+	"old_level": {
+		"index" : 1000,
+		"name" : "Old Levels",
+		"colors" : ["#000000"],
+		"visible" : false
+	}
+}

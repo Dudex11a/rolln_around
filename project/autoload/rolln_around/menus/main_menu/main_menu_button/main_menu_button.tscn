@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://65kga7r7l3mc"]
+
+[ext_resource type="Script" uid="uid://csxsgrb6k3hco" path="res://autoload/rolln_around/menus/main_menu/main_menu_button/main_menu_button.gd" id="1_y7b62"]
+
+[node name="MainMenuButton" type="Button"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -199.5
+offset_right = 199.5
+offset_bottom = 37.0
+text = "Main Menu Button"
+script = ExtResource("1_y7b62")
+
+[node name="Icon" type="TextureRect" parent="."]
+anchor_right = 0.1
+anchor_bottom = 1.0
+offset_right = 0.0999985
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+metadata/_edit_use_anchors_ = true

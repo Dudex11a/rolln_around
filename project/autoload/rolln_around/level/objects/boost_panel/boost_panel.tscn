@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bli17cnpquvmp"]
+
+[ext_resource type="PackedScene" uid="uid://cgss1xrs0wxbg" path="res://autoload/rolln_around/level/objects/boost_panel/res/boost_panel.glb" id="1_5v1gf"]
+[ext_resource type="Script" uid="uid://b8bvf7nm5k5e7" path="res://autoload/rolln_around/level/objects/boost_panel/boost_panel.gd" id="1_8qv7x"]
+[ext_resource type="Material" uid="uid://c45mvy123oshw" path="res://autoload/rolln_around/level/objects/boost_panel/res/boost_panel.material" id="2_sc8r3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_okt85"]
+absorbent = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_psyg3"]
+data = PackedVector3Array(-1.5, -0.95, 2, -1.5, 0.05, -2, -1.5, 0.05, 2, -1.5, -0.95, 2, -1.5, -0.95, -2, -1.5, 0.05, -2, -1.5, -0.95, -2, 1.5, 0.05, -2, -1.5, 0.05, -2, -1.5, -0.95, -2, 1.5, -0.95, -2, 1.5, 0.05, -2, 1.5, -0.95, -2, 1.5, 0.05, 2, 1.5, 0.05, -2, 1.5, -0.95, -2, 1.5, -0.95, 2, 1.5, 0.05, 2, 1.5, -0.95, 2, -1.5, 0.05, 2, 1.5, 0.05, 2, 1.5, -0.95, 2, -1.5, -0.95, 2, -1.5, 0.05, 2, -1.5, -0.95, -2, 1.5, -0.95, 2, 1.5, -0.95, -2, -1.5, -0.95, -2, -1.5, -0.95, 2, 1.5, -0.95, 2, 1.5, 0.05, -2, -1.5, 0.05, 2, -1.5, 0.05, -2, 1.5, 0.05, -2, 1.5, 0.05, 2, -1.5, 0.05, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tfuse"]
+size = Vector3(2.5, 1.09471, 3.5)
+
+[node name="BoostPanel" type="Node3D"]
+script = ExtResource("1_8qv7x")
+metadata/_edit_group_ = true
+
+[node name="boost_panel" parent="." instance=ExtResource("1_5v1gf")]
+
+[node name="Cube" parent="boost_panel" index="0"]
+surface_material_override/0 = ExtResource("2_sc8r3")
+
+[node name="StaticBody3d" type="StaticBody3D" parent="boost_panel/Cube" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_okt85")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="boost_panel/Cube/StaticBody3d"]
+shape = SubResource("ConcavePolygonShape3D_psyg3")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+collision_layer = 3
+collision_mask = 3
+monitorable = false
+wind_force_magnitude = 10.0
+wind_attenuation_factor = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0405898, 0)
+shape = SubResource("BoxShape3D_tfuse")
+
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
+
+[editable path="boost_panel"]

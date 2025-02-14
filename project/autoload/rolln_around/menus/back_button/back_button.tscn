@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5spe4m1okmgo"]
+
+[ext_resource type="Script" uid="uid://bj0dqf25pc38x" path="res://autoload/rolln_around/menus/back_button/back_button.gd" id="1_6kyjd"]
+[ext_resource type="Texture2D" uid="uid://ejg5gg1c1ujn" path="res://res/icons/arrow-left-fill.svg" id="1_a3nmj"]
+
+[node name="BackButton" type="Button"]
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.133
+offset_left = 5.0
+offset_top = 5.0
+offset_bottom = 0.199997
+theme_override_font_sizes/font_size = 40
+script = ExtResource("1_6kyjd")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -4.99999
+offset_bottom = -4.99999
+texture = ExtResource("1_a3nmj")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

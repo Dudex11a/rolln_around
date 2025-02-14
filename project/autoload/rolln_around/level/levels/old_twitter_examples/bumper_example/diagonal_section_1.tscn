@@ -1,0 +1,141 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6olvc5swdne3"]
+
+[ext_resource type="PackedScene" uid="uid://xs11tv5yqjhk" path="res://autoload/rolln_around/level/levels/old_twitter_examples/bumper_example/bumper_moving_platform.tscn" id="1_7pcbu"]
+[ext_resource type="Material" uid="uid://dfpk7kxmvun82" path="res://res/materials/multisided1.material" id="2_pqakp"]
+[ext_resource type="Material" uid="uid://bhe1l7vlhpq8l" path="res://autoload/rolln_around/level/levels/old_twitter_examples/bumper_example/down_the_hole.material" id="3_spisn"]
+[ext_resource type="Texture2D" uid="uid://bifxnpr1uw27w" path="res://res/textures/solid-noise-alpha_unknown.png" id="4_461sd"]
+[ext_resource type="PackedScene" uid="uid://qj70xumy6sol" path="res://autoload/rolln_around/level/objects/area_trigger/area_trigger.tscn" id="4_c3w5t"]
+[ext_resource type="Texture2D" uid="uid://q15hw35dijw3" path="res://res/textures/solid-noise_unknown.png" id="4_loqsh"]
+[ext_resource type="PackedScene" uid="uid://b1sp8bxmj5ilo" path="res://autoload/rolln_around/level/objects/goal/goal_ring.tscn" id="5_7ftbv"]
+[ext_resource type="PackedScene" uid="uid://pkgv4kuu5n7b" path="res://autoload/rolln_around/level/objects/bumper/bumper.tscn" id="6_kxtt1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgcjt"]
+resource_local_to_scene = true
+transparency = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.894118, 0.972549, 0.956863, 0.32549)
+albedo_texture = ExtResource("4_461sd")
+metallic = 0.4
+metallic_specular = 0.0
+roughness = 0.1
+refraction_scale = 0.1
+refraction_texture = ExtResource("4_loqsh")
+refraction_texture_channel = 4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j5vju"]
+size = Vector3(12, 12, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dmiw"]
+size = Vector3(12, 19, 16)
+
+[node name="DiagonalSection1" type="Node3D"]
+
+[node name="BumperMovingPlatforms" type="Node3D" parent="."]
+
+[node name="BumperMovingPlatform" parent="BumperMovingPlatforms" instance=ExtResource("1_7pcbu")]
+transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, 0, 0, -1)
+
+[node name="BumperMovingPlatform2" parent="BumperMovingPlatforms" instance=ExtResource("1_7pcbu")]
+transform = Transform3D(2.98023e-07, 0, -1, 0, 1, 0, 1, 0, 2.98023e-07, 0, 0, -3.5)
+
+[node name="BumperMovingPlatform3" parent="BumperMovingPlatforms" instance=ExtResource("1_7pcbu")]
+transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, 0, 0, -6)
+
+[node name="BumperMovingPlatform4" parent="BumperMovingPlatforms" instance=ExtResource("1_7pcbu")]
+transform = Transform3D(2.98023e-07, 0, -1, 0, 1, 0, 1, 0, 2.98023e-07, 0, 0, -8.5)
+
+[node name="BumperMovingPlatform5" parent="BumperMovingPlatforms" instance=ExtResource("1_7pcbu")]
+transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, 0, 0, -11)
+
+[node name="CsgCombiner3d" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CsgBox3d2" type="CSGBox3D" parent="CsgCombiner3d"]
+transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, 0, 5, -7)
+size = Vector3(13, 12, 12)
+material = ExtResource("2_pqakp")
+
+[node name="CsgBox3d3" type="CSGBox3D" parent="CsgCombiner3d"]
+transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, 0, 5, -7)
+operation = 2
+size = Vector3(14, 10, 10)
+material = ExtResource("2_pqakp")
+
+[node name="CsgBox3d4" type="CSGBox3D" parent="CsgCombiner3d"]
+transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, 0, -0.5, -14.5)
+operation = 2
+size = Vector3(2, 21, 10)
+material = ExtResource("2_pqakp")
+
+[node name="Chimney" type="CSGBox3D" parent="CsgCombiner3d"]
+transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, 0, -5, -14.5)
+size = Vector3(5, 32, 12)
+material = ExtResource("3_spisn")
+
+[node name="CsgBox3d" type="CSGBox3D" parent="CsgCombiner3d/Chimney"]
+transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, -1, -0.5, -2.98024e-07)
+operation = 2
+size = Vector3(10, 31, 3)
+material = ExtResource("2_pqakp")
+
+[node name="ChimneyGlass" type="CSGBox3D" parent="CsgCombiner3d"]
+transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, 0, -10.5, -12.8681)
+size = Vector3(2, 18.999, 9.97838)
+material = SubResource("StandardMaterial3D_tgcjt")
+
+[node name="FirstAreaTrigger" parent="." instance=ExtResource("4_c3w5t")]
+
+[node name="Camera" parent="FirstAreaTrigger" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.962218, 0.27228, 0, -0.27228, 0.962218, 0, 10.593, 19.023)
+
+[node name="Area3D" parent="FirstAreaTrigger" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -6)
+
+[node name="CollisionShape3D" parent="FirstAreaTrigger/Area3D" index="0"]
+shape = SubResource("BoxShape3D_j5vju")
+
+[node name="FinalAreaTrigger" parent="." instance=ExtResource("4_c3w5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -9)
+
+[node name="Camera" parent="FinalAreaTrigger" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.965016, -0.262189, 0, 0.262189, 0.965017, 0, -13.363, 13.619)
+fov = 60.0
+
+[node name="Area3D" parent="FinalAreaTrigger" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 0)
+
+[node name="CollisionShape3D" parent="FinalAreaTrigger/Area3D" index="0"]
+shape = SubResource("BoxShape3D_4dmiw")
+
+[node name="ChimneyBumpers" type="Node3D" parent="."]
+
+[node name="Bumper" parent="ChimneyBumpers" instance=ExtResource("6_kxtt1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.5, -4, -15.5)
+
+[node name="Bumper2" parent="ChimneyBumpers" instance=ExtResource("6_kxtt1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.5, -4, -15.5)
+
+[node name="Bumper3" parent="ChimneyBumpers" instance=ExtResource("6_kxtt1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.5, -10.5, -15.5)
+
+[node name="Bumper4" parent="ChimneyBumpers" instance=ExtResource("6_kxtt1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.5, -10.5, -15.5)
+
+[node name="Bumper5" parent="ChimneyBumpers" instance=ExtResource("6_kxtt1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.5, -17, -15.5)
+
+[node name="Bumper6" parent="ChimneyBumpers" instance=ExtResource("6_kxtt1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.5, -17, -15.5)
+
+[node name="Bumper7" parent="ChimneyBumpers" instance=ExtResource("6_kxtt1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -14, -15.5)
+
+[node name="Bumper8" parent="ChimneyBumpers" instance=ExtResource("6_kxtt1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -7.5, -15.5)
+
+[node name="Goal" parent="." instance=ExtResource("5_7ftbv")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -21, -15)
+
+[editable path="FirstAreaTrigger"]
+[editable path="FinalAreaTrigger"]

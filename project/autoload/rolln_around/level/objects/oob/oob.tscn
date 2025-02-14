@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://co2mquglnk8ua"]
+
+[ext_resource type="Script" uid="uid://dfobnmevfboo8" path="res://autoload/rolln_around/level/objects/oob/oob.gd" id="1_bx1i0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2wk4s"]
+
+[node name="OutOfBounds" type="Area3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_bx1i0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2wk4s")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_out_of_bounds_body_shape_entered"]

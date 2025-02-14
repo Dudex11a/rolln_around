@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://hf48kdkakwfw"]
+
+[ext_resource type="Script" uid="uid://xccp2lfc78dh" path="res://autoload/rolln_around/level/game_mode/game_modes/solo_level/level_select/status_spoon_slot/status_spoon_slot.gd" id="1_uujyn"]
+[ext_resource type="Texture2D" uid="uid://bpfi5bvxacu7t" path="res://autoload/rolln_around/level/game_mode/game_modes/solo_level/UI/spoon_slot/res/icon.png" id="2_e4aw4"]
+
+[node name="StatusSpoonSlot" type="Control"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_uujyn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e4aw4")
+expand_mode = 2
+stretch_mode = 5

@@ -1,0 +1,261 @@
+[gd_scene load_steps=6 format=3 uid="uid://cilljudmrkyfu"]
+
+[ext_resource type="Script" uid="uid://c10i1vcw0n0a1" path="res://autoload/rolln_around/menus/level_select/level_select.gd" id="1_ax6s3"]
+[ext_resource type="PackedScene" uid="uid://c5spe4m1okmgo" path="res://autoload/rolln_around/menus/back_button/back_button.tscn" id="2_c8iht"]
+[ext_resource type="PackedScene" uid="uid://hocrhgkuhgft" path="res://autoload/rolln_around/menus/level_select/level_catagory/level_catagory.tscn" id="3_3yxuo"]
+[ext_resource type="PackedScene" uid="uid://bci02ihosb4xs" path="res://autoload/rolln_around/level/game_mode/game_modes/solo_level/level_select/button/button.tscn" id="4_ukfrt"]
+[ext_resource type="PackedScene" uid="uid://ddxida38313i8" path="res://autoload/rolln_around/level/game_mode/game_modes/solo_level/level_select/solo_level_status.tscn" id="5_bpndq"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ax6s3")
+
+[node name="LeftSide" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.00972222
+anchor_top = 0.0111111
+anchor_right = 0.556944
+anchor_bottom = 0.981481
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Panel" parent="LeftSide"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" parent="LeftSide" instance=ExtResource("2_c8iht")]
+layout_mode = 1
+anchor_left = 0.012
+anchor_top = 0.009
+anchor_right = 0.17
+anchor_bottom = 0.134
+offset_left = -0.124003
+offset_top = 0.14
+offset_right = -0.110329
+offset_bottom = 0.139854
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="LevelSelectTitleLabel" type="Label" parent="LeftSide"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.199
+anchor_top = 0.009
+anchor_right = 0.979
+anchor_bottom = 0.157
+offset_left = 0.0269928
+offset_top = 0.14
+offset_right = -0.03302
+offset_bottom = 0.219994
+theme_override_font_sizes/font_size = 30
+text = "Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LeftSide"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0130051
+anchor_top = 0.154809
+anchor_right = 0.979678
+anchor_bottom = 0.990725
+offset_left = -0.124
+offset_top = -0.120026
+offset_right = 0.00695801
+offset_bottom = -0.140015
+follow_focus = true
+horizontal_scroll_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelContainer" type="VBoxContainer" parent="LeftSide/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TestLevelsCatagory" parent="LeftSide/ScrollContainer/LevelContainer" instance=ExtResource("3_3yxuo")]
+layout_mode = 2
+
+[node name="NameLabel" parent="LeftSide/ScrollContainer/LevelContainer/TestLevelsCatagory/Title" index="1"]
+text = "Test Levels"
+
+[node name="TestLevelButton" parent="LeftSide/ScrollContainer/LevelContainer/TestLevelsCatagory/ButtonContainer" index="0" instance=ExtResource("4_ukfrt")]
+unique_name_in_owner = true
+layout_mode = 2
+amount_of_spoons = 2
+level_path = "res://autoload/rolln_around/level/levels/testing/test_level/test_level.tscn"
+level_name = "Test Level"
+
+[node name="SimpleIDLabel" parent="LeftSide/ScrollContainer/LevelContainer/TestLevelsCatagory/ButtonContainer/TestLevelButton" index="0"]
+text = "T1"
+
+[node name="GoalTestButton2" parent="LeftSide/ScrollContainer/LevelContainer/TestLevelsCatagory/ButtonContainer" index="1" instance=ExtResource("4_ukfrt")]
+layout_mode = 2
+level_path = "res://autoload/rolln_around/level/levels/testing/goal_test/goal_test.tscn"
+level_name = "Goal Test"
+
+[node name="SimpleIDLabel" parent="LeftSide/ScrollContainer/LevelContainer/TestLevelsCatagory/ButtonContainer/GoalTestButton2" index="0"]
+text = "GT"
+
+[node name="World01Catagory" parent="LeftSide/ScrollContainer/LevelContainer" instance=ExtResource("3_3yxuo")]
+layout_mode = 2
+
+[node name="NameLabel" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/Title" index="1"]
+text = "World 0.1"
+
+[node name="1TheBasicsButton" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer" index="0" instance=ExtResource("4_ukfrt")]
+layout_mode = 2
+level_path = "res://autoload/rolln_around/level/levels/world_01/the_basics/the_basics.tscn"
+level_name = "The Basics"
+
+[node name="SimpleIDLabel" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer/1TheBasicsButton" index="0"]
+text = "1"
+
+[node name="2UpTheStepsButton" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer" index="1" instance=ExtResource("4_ukfrt")]
+layout_mode = 2
+amount_of_spoons = 3
+level_path = "res://autoload/rolln_around/level/levels/world_01/up_the_steps/up_the_steps.tscn"
+level_name = "Up the Stairs"
+
+[node name="SimpleIDLabel" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer/2UpTheStepsButton" index="0"]
+text = "2"
+
+[node name="3ACoupleRingsButton2" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer" index="2" instance=ExtResource("4_ukfrt")]
+layout_mode = 2
+amount_of_spoons = 3
+level_path = "res://autoload/rolln_around/level/levels/world_01/a_couple_rings/a_couple_rings.tscn"
+level_name = "A Couple Rings"
+
+[node name="SimpleIDLabel" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer/3ACoupleRingsButton2" index="0"]
+text = "3"
+
+[node name="4ThreePerspectivesButton3" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer" index="3" instance=ExtResource("4_ukfrt")]
+layout_mode = 2
+amount_of_spoons = 2
+level_path = "res://autoload/rolln_around/level/levels/world_01/three_perspectives/three_perspectives.tscn"
+level_name = "Perspectives"
+
+[node name="SimpleIDLabel" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer/4ThreePerspectivesButton3" index="0"]
+clip_children = 2
+offset_left = 2.0
+offset_top = 26.0002
+offset_right = 2.0
+offset_bottom = 59.0002
+text = "4
+"
+clip_text = true
+
+[node name="5JumpAcrossButton" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer" index="4" instance=ExtResource("4_ukfrt")]
+layout_mode = 2
+amount_of_spoons = 1
+level_path = "res://autoload/rolln_around/level/levels/world_01/jump_across/jump_across.tscn"
+level_name = "Jump Across"
+
+[node name="SimpleIDLabel" parent="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer/5JumpAcrossButton" index="0"]
+text = "5"
+
+[node name="RightSide" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.584444
+anchor_top = 0.125926
+anchor_right = 0.965278
+anchor_bottom = 0.828074
+offset_left = 0.199982
+offset_bottom = -0.160034
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Panel" parent="RightSide"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelName" type="Label" parent="RightSide"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0218978
+anchor_top = 0.0131926
+anchor_right = 0.974453
+anchor_bottom = 0.129293
+offset_bottom = -0.00200653
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelPreviewRatioContainer" type="AspectRatioContainer" parent="RightSide"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.022
+anchor_top = 0.15
+anchor_right = 0.974
+anchor_bottom = 0.701
+offset_left = -0.0280142
+offset_top = 0.127224
+offset_right = 0.123871
+offset_bottom = 0.154633
+ratio = 1.3333
+
+[node name="LevelPreviewPreviewContainer" type="SubViewportContainer" parent="RightSide/LevelPreviewRatioContainer"]
+unique_name_in_owner = true
+process_mode = 1
+layout_mode = 2
+stretch = true
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelPreviewViewport" type="SubViewport" parent="RightSide/LevelPreviewRatioContainer/LevelPreviewPreviewContainer"]
+unique_name_in_owner = true
+own_world_3d = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(261, 195)
+render_target_update_mode = 4
+
+[node name="GameModeStatus" type="Control" parent="RightSide"]
+layout_mode = 1
+anchor_left = 0.022
+anchor_top = 0.726796
+anchor_right = 0.974
+anchor_bottom = 0.981574
+offset_left = -0.0280004
+offset_top = 0.0239868
+offset_right = 0.123993
+offset_bottom = -0.0400085
+metadata/_edit_use_anchors_ = true
+
+[node name="SoloLevelStatus" parent="RightSide/GameModeStatus" instance=ExtResource("5_bpndq")]
+visible = false
+layout_mode = 1
+
+[editable path="LeftSide/ScrollContainer/LevelContainer/TestLevelsCatagory"]
+[editable path="LeftSide/ScrollContainer/LevelContainer/TestLevelsCatagory/ButtonContainer/TestLevelButton"]
+[editable path="LeftSide/ScrollContainer/LevelContainer/TestLevelsCatagory/ButtonContainer/GoalTestButton2"]
+[editable path="LeftSide/ScrollContainer/LevelContainer/World01Catagory"]
+[editable path="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer/1TheBasicsButton"]
+[editable path="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer/2UpTheStepsButton"]
+[editable path="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer/3ACoupleRingsButton2"]
+[editable path="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer/4ThreePerspectivesButton3"]
+[editable path="LeftSide/ScrollContainer/LevelContainer/World01Catagory/ButtonContainer/5JumpAcrossButton"]

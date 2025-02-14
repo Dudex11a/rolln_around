@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://befcu22pnaae5"]
+
+[ext_resource type="Script" uid="uid://b7vgq1pebpmm8" path="res://autoload/rolln_around/level/game_mode/game_mode.gd" id="1_aoolh"]
+
+[node name="GameMode" type="Node" groups=["Level", "Main", "OutOfBounds"]]
+script = ExtResource("1_aoolh")

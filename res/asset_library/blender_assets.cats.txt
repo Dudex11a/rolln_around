@@ -1,0 +1,11 @@
+# This is an Asset Catalog Definition file for Blender.
+#
+# Empty lines and lines starting with `#` will be ignored.
+# The first non-ignored line should be the version indicator.
+# Other lines are of the format "UUID:catalog/path/for/assets:simple catalog name"
+
+VERSION 1
+
+81615104-d018-4a96-9c47-9ca30021c6e3:Roll'n Around:Roll'n Around
+334cb7b4-e058-4d34-96b1-a28f05d698b2:Roll'n Around/Geometry Nodes:Roll'n Around-Geometry Nodes
+727d6f5b-5fcf-4cbe-887c-e47928b5a86b:Roll'n Around/Materials:Roll'n Around-Materials

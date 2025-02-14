@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctpkhirflp3ix"]
+
+[ext_resource type="PackedScene" uid="uid://dsm1igqcvpyti" path="res://autoload/rolln_around/level/objects/spawn/res/tee.glb" id="1_r8vuw"]
+[ext_resource type="Script" uid="uid://cvjkv328g15xa" path="res://autoload/rolln_around/level/objects/spawn/spawn.gd" id="1_t5fqj"]
+
+[node name="Spawn" type="Node3D"]
+script = ExtResource("1_t5fqj")
+
+[node name="tee" parent="." instance=ExtResource("1_r8vuw")]
+
+[node name="SpawnPoint" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

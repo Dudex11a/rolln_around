@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6b6v0506tq3g"]
+
+[ext_resource type="Environment" uid="uid://caeokh6ar4nnh" path="res://res/environment/low_end_env.tres" id="2_cvc7e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_32mj6"]
+size = Vector3(13.333, 12, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em3p8"]
+resource_local_to_scene = true
+cull_mode = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(0, 0, 0, 1)
+grow_amount = 4.72
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kgd7m"]
+resource_local_to_scene = true
+next_pass = SubResource("StandardMaterial3D_em3p8")
+shading_mode = 0
+specular_mode = 2
+albedo_color = Color(1, 0.729412, 0.392157, 1)
+heightmap_scale = 5.954
+grow = true
+grow_amount = -0.5
+
+[node name="World" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_32mj6")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_kgd7m")
+
+[node name="CameraRotPoint" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRotPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 500)
+projection = 1
+size = 15.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_cvc7e")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cucknc5itdcro"]
+
+[ext_resource type="PackedScene" uid="uid://65kga7r7l3mc" path="res://autoload/rolln_around/menus/main_menu/main_menu_button/main_menu_button.tscn" id="1_i21fu"]
+[ext_resource type="Texture2D" uid="uid://dgsg3fer6o6o3" path="res://res/icons/play-list-2-fill.svg" id="2_u28c2"]
+
+[node name="Results" instance=ExtResource("1_i21fu")]
+text = "Results"
+real_icon = ExtResource("2_u28c2")
+
+[node name="Icon" parent="." index="0"]
+texture = ExtResource("2_u28c2")

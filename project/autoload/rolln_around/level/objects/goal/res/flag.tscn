@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://n2ey7jy0u84n"]
+
+[ext_resource type="PackedScene" uid="uid://dylu1h7rheth5" path="res://autoload/rolln_around/level/objects/goal/res/flag.glb" id="1_5260e"]
+[ext_resource type="Material" uid="uid://dck7ypuew1gcn" path="res://autoload/rolln_around/level/objects/goal/res/flag.material" id="2_grrwk"]
+[ext_resource type="Material" uid="uid://cbpo1n6hc52ej" path="res://autoload/rolln_around/level/objects/goal/res/goal_post.material" id="2_w5mqt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bwlv7"]
+radius = 0.1
+
+[node name="Flag" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_bwlv7")
+
+[node name="flag" parent="." instance=ExtResource("1_5260e")]
+
+[node name="Goal" parent="flag" index="0"]
+surface_material_override/0 = ExtResource("2_w5mqt")
+surface_material_override/1 = ExtResource("2_grrwk")
+
+[editable path="flag"]

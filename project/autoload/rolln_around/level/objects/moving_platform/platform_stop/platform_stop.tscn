@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://du8h5hnm2p7ox"]
+
+[ext_resource type="Script" uid="uid://cqe3fcgxmoua1" path="res://autoload/rolln_around/level/objects/moving_platform/platform_stop/platform_stop.gd" id="1_26pof"]
+
+[node name="PlatformStop" type="PathFollow3D"]
+cubic_interp = false
+script = ExtResource("1_26pof")

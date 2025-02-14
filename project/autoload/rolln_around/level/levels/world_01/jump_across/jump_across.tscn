@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://daitm24qesq8e"]
+
+[ext_resource type="PackedScene" uid="uid://d2sv0engpspdg" path="res://autoload/rolln_around/level/levels/templates/!solo_level_template/!solo_level_template_inherited.tscn" id="1_beqxx"]
+[ext_resource type="PackedScene" uid="uid://b2ki71uqmquok" path="res://autoload/rolln_around/level/levels/world_01/jump_across/res/jump_across.glb" id="2_637b8"]
+[ext_resource type="PackedScene" uid="uid://dug4b2lh7erl" path="res://autoload/rolln_around/level/objects/spoon/spoon.tscn" id="3_lxmsk"]
+[ext_resource type="PackedScene" uid="uid://dppo1mcikhg2n" path="res://autoload/rolln_around/level/objects/goal/goal_gate.tscn" id="3_yafpm"]
+
+[node name="JumpAcross" instance=ExtResource("1_beqxx")]
+
+[node name="Spawn" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
+
+[node name="Camera" parent="StartAreaTrigger" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 25.708, 22.849)
+
+[node name="jump_across" parent="." index="5" instance=ExtResource("2_637b8")]
+
+[node name="1" parent="." index="6" instance=ExtResource("3_lxmsk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, -11)
+
+[node name="Goal" parent="." index="7" instance=ExtResource("3_yafpm")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 10.5, 0, -0.25)
+
+[editable path="OutOfBounds"]
+[editable path="StartAreaTrigger"]

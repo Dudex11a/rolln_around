@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdbh4t58y8vkg"]
+
+[ext_resource type="Script" uid="uid://bdywogx5viqfr" path="res://autoload/rolln_around/level/objects/checkpoint/checkpoint.gd" id="1_vgdc6"]
+
+[node name="Checkpoint" type="Node3D"]
+script = ExtResource("1_vgdc6")

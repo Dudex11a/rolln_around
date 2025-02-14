@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx7pd8wprs3h3"]
+
+[ext_resource type="PackedScene" uid="uid://dvh5hs7vxrnu0" path="res://autoload/rolln_around/level/objects/player/cosmetics/ball/ball.tscn" id="1_jd3xp"]
+[ext_resource type="Script" uid="uid://cuewsi8o4qdvt" path="res://autoload/rolln_around/level/objects/player/cosmetics/ball/cosmetics/default/default.gd" id="2_7fg3p"]
+[ext_resource type="ArrayMesh" uid="uid://wvtx8uxiyg5h" path="res://autoload/rolln_around/level/objects/player/res/ball_Sphere.res" id="2_i2pl8"]
+[ext_resource type="Material" uid="uid://dpvwpbrikfe2r" path="res://autoload/rolln_around/level/objects/player/res/ball.material" id="3_enl1y"]
+[ext_resource type="Material" uid="uid://b0msh08e2ucr8" path="res://autoload/rolln_around/level/objects/player/res/ball_2.material" id="4_8ibcr"]
+
+[node name="BallCosmetic" instance=ExtResource("1_jd3xp")]
+script = ExtResource("2_7fg3p")
+colors = Array[Color]([Color(0.94902, 0.0470588, 0.0470588, 1), Color(0.94902, 0.737255, 0.666667, 1)])
+
+[node name="BallMesh" type="MeshInstance3D" parent="." index="0"]
+unique_name_in_owner = true
+mesh = ExtResource("2_i2pl8")
+surface_material_override/0 = ExtResource("3_enl1y")
+surface_material_override/1 = ExtResource("4_8ibcr")

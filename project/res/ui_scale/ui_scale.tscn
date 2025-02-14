@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://kay23mk0g7ge"]
+
+[ext_resource type="Script" uid="uid://c3p1k47l8ro1l" path="res://res/ui_scale/ui_scale.gd" id="1_honxs"]
+
+[node name="UIScale" type="Control" groups=["UIScale"]]
+offset_right = 1200.0
+offset_bottom = 900.0
+mouse_filter = 2
+script = ExtResource("1_honxs")
+metadata/_edit_use_custom_anchors = true

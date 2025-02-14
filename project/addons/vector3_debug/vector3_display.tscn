@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyp75ftc5f4y8"]
+
+[ext_resource type="Script" uid="uid://di38idt2gsgrj" path="res://addons/vector3_debug/vector3_display.gd" id="1_nhmwf"]
+[ext_resource type="ArrayMesh" uid="uid://iy3ob38bbose" path="res://addons/vector3_debug/arrow.res" id="2_xqq6s"]
+[ext_resource type="Shader" uid="uid://bx6sufmyxfdir" path="res://addons/vector3_debug/arrow_shader.gdshader" id="3_oaahy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o64k4"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_oaahy")
+shader_parameter/direction = Vector3(1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f7ybr"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_oaahy")
+shader_parameter/direction = Vector3(1, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fo0kl"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_oaahy")
+shader_parameter/direction = Vector3(0, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvpws"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_oaahy")
+shader_parameter/direction = Vector3(0, 0, 1)
+
+[node name="Vector3Display" type="Node3D"]
+script = ExtResource("1_nhmwf")
+
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="StrengthLabel" type="Label3D" parent="."]
+pixel_size = 0.0003
+billboard = 1
+no_depth_test = true
+fixed_size = true
+text = "Strength"
+vertical_alignment = 0
+
+[node name="DirectionMesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_xqq6s")
+surface_material_override/0 = SubResource("ShaderMaterial_o64k4")
+
+[node name="XMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, 1, 0, -0.1, -4.37114e-08, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("2_xqq6s")
+surface_material_override/0 = SubResource("ShaderMaterial_f7ybr")
+
+[node name="YMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("2_xqq6s")
+surface_material_override/0 = SubResource("ShaderMaterial_fo0kl")
+
+[node name="ZMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-08, -0.1, 0, 1, -4.37114e-09, 0, 0, 0)
+mesh = ExtResource("2_xqq6s")
+surface_material_override/0 = SubResource("ShaderMaterial_xvpws")
+
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]

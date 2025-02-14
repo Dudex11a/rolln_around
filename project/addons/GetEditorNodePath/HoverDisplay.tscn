@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjjt6j52fxy1m"]
+
+[ext_resource type="Script" uid="uid://ckjoehkvypud7" path="res://addons/GetEditorNodePath/HoverDisplay.gd" id="1_bj167"]
+
+[node name="HoverDisplay" type="CanvasLayer"]
+script = ExtResource("1_bj167")
+
+[node name="HighlightBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="HighlightBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

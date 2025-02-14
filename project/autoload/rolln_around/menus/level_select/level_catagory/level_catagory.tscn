@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://hocrhgkuhgft"]
+
+[ext_resource type="Script" uid="uid://cmfwfelol8ias" path="res://autoload/rolln_around/menus/level_select/level_catagory/level_catagory.gd" id="1_82wdp"]
+
+[node name="LevelCatagory" type="VSplitContainer"]
+custom_minimum_size = Vector2(0, 60)
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+split_offset = 60
+dragger_visibility = 2
+script = ExtResource("1_82wdp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+
+[node name="TitlePanel" type="Panel" parent="Title"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+
+[node name="NameLabel" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 27
+text = "Catagory"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+
+[node name="ButtonContainer" type="HFlowContainer" parent="."]
+layout_mode = 2

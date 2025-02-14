@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b776jn6evscgr"]
+
+[ext_resource type="Script" uid="uid://w7gulwu44v42" path="res://autoload/rolln_around/level/objects/player/cosmetics/jump_ring/jump_ring.gd" id="1_7p2l3"]
+
+[node name="JumpRingCosmetic" type="Node3D"]
+script = ExtResource("1_7p2l3")
