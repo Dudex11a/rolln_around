@@ -11,6 +11,6 @@ My incentives for this project are:
 The Godot project is located in the "project" directory.
 I keep my own notes on the project in the "notes" directory. I mainly use [Obsidian](https://obsidian.md/) to manage the notes.
 
-The game can be found to play at [https://dudex.itch.io/rolln-around](https://dudex.itch.io/rolln-around).
+The compiled game can be found to download and play at [https://dudex.itch.io/rolln-around](https://dudex.itch.io/rolln-around).
 
 Before making this repo public I reset the git repo because there was my own PIA within the repo and I didn't want to go through the process of clearing and confirming that each instance of PIA is removed after removing it.
